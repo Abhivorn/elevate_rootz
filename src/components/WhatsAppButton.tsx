@@ -24,7 +24,7 @@ export const WhatsAppButton = () => {
           pointerEvents: isOpen ? 'auto' : 'none'
         }}
         transition={{ duration: 0.2 }}
-        className="absolute bottom-20 right-0 w-72 bg-card rounded-2xl shadow-card border border-border overflow-hidden mb-2"
+        className="absolute bottom-20 right-0 w-72 max-w-[calc(100vw-2rem)] bg-card rounded-2xl shadow-card border border-border overflow-hidden mb-2"
       >
         {/* Header */}
         <div className="bg-[#25D366] px-4 py-3 flex items-center justify-between">

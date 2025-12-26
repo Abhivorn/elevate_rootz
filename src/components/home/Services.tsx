@@ -75,7 +75,7 @@ export const Services = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {dermatologistProcedures.map((service, index) => (
               <motion.div
@@ -83,7 +83,7 @@ export const Services = () => {
                 variants={itemVariants}
                 className="service-card group"
               >
-                <div className="relative h-72 overflow-hidden rounded-2xl">
+                <div className="relative h-48 md:h-64 lg:h-72 overflow-hidden rounded-2xl">
                   <img
                     src={service.image}
                     alt={service.name}
@@ -119,7 +119,7 @@ export const Services = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {cleansingServices.map((service, index) => (
               <motion.div

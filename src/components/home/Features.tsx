@@ -65,7 +65,7 @@ export const Features = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
         >
           {features.map((feature, index) => (
             <motion.div

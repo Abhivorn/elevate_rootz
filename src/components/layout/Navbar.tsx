@@ -33,20 +33,24 @@ export const Navbar = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="hidden md:block bg-primary text-primary-foreground py-2">
-        <div className="container flex justify-between items-center text-sm">
-          <div className="flex items-center gap-6">
-            <a href="tel:+911234567890" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Phone className="w-4 h-4" />
-              <span>+91 123 456 7890</span>
-            </a>
-            <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>India | Dubai</span>
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="opacity-80">Mon - Sat: 9:00 AM - 7:00 PM</span>
+      <div className="bg-primary text-primary-foreground py-2">
+        <div className="container">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 text-xs md:text-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-6">
+              <a href="tel:+911234567890" className="flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity">
+                <Phone className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="hidden sm:inline">+91 123 456 7890</span>
+                <span className="sm:hidden">Call</span>
+              </a>
+              <span className="flex items-center gap-1 md:gap-2">
+                <MapPin className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="hidden md:inline">Pune | Ahmedabad | Bangalore | Hyderabad | Dubai</span>
+                <span className="md:hidden">Locations</span>
+              </span>
+            </div>
+            <div className="flex items-center">
+              <span className="opacity-80 text-center sm:text-right text-xs md:text-sm">Mon - Sat: 9:00 AM - 7:00 PM</span>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +71,7 @@ export const Navbar = () => {
             <motion.img
               src={logo}
               alt="Elevate Rootz"
-              className="h-14 w-auto"
+              className="h-12 md:h-14 w-auto"
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
             />
@@ -105,13 +109,20 @@ export const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden relative z-10 p-2 text-foreground"
             aria-label="Toggle menu"
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            <motion.div
+              animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </motion.div>
+          </motion.button>
         </nav>
 
         {/* Mobile Menu */}

@@ -31,6 +31,7 @@ const contactSchema = z.object({
   email: z.string().email('Please enter a valid email').max(255),
   phone: z.string().min(10, 'Please enter a valid phone number').max(20),
   service: z.string().min(1, 'Please select a service'),
+  location: z.string().min(1, 'Please select a location'),
   message: z.string().min(10, 'Message must be at least 10 characters').max(1000),
   consent: z.boolean().refine(val => val === true, 'You must agree to the terms'),
 });
@@ -47,10 +48,15 @@ const services = [
   'Other',
 ];
 
+const locations = [
+  'India - Hyderabad',
+  'Dubai',
+];
+
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '(123) 456-7890', href: 'tel:+1234567890' },
+  { icon: Phone, label: 'Phone', value: '+91 123 456 7890', href: 'tel:+911234567890' },
   { icon: Mail, label: 'Email', value: 'hello@elevaterootz.com', href: 'mailto:hello@elevaterootz.com' },
-  { icon: MapPin, label: 'India Office', value: '123 Medical Plaza, Delhi', href: null },
+  { icon: MapPin, label: 'Hyderabad Office', value: 'Hyderabad, Telangana, India', href: 'https://www.google.com/maps?q=17.4829782,78.4134561' },
   { icon: MapPin, label: 'Dubai Office', value: '456 Healthcare Tower, Dubai', href: null },
   { icon: Clock, label: 'Hours', value: 'Mon - Sat: 9AM - 7PM', href: null },
 ];
@@ -67,6 +73,7 @@ const Contact = () => {
       email: '',
       phone: '',
       service: '',
+      location: '',
       message: '',
       consent: false,
     },
@@ -94,7 +101,7 @@ const Contact = () => {
   return (
     <MotionPage>
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-hero overflow-hidden">
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 leaf-pattern opacity-50" />
         <div className="container relative z-10">
           <motion.div
@@ -118,7 +125,7 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -191,6 +198,30 @@ const Contact = () => {
                                 {services.map((service) => (
                                   <SelectItem key={service} value={service}>
                                     {service}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="location"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Preferred Location</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Select a location" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                {locations.map((location) => (
+                                  <SelectItem key={location} value={location}>
+                                    {location}
                                   </SelectItem>
                                 ))}
                               </SelectContent>
@@ -305,12 +336,18 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Map Placeholder */}
-              <div className="rounded-2xl overflow-hidden h-64 bg-secondary/50 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary/50 mx-auto mb-4" />
-                  <p className="text-muted-foreground">Interactive map coming soon</p>
-                </div>
+              {/* Embedded Map */}
+              <div className="rounded-2xl overflow-hidden h-64">
+                <iframe
+                  src="https://maps.google.com/maps?q=17.4829782,78.4134561&z=17&output=embed"
+                  width="100%"
+                  height="256"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Location Map"
+                ></iframe>
               </div>
             </motion.div>
           </div>

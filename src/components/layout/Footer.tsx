@@ -2,6 +2,13 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
+const socialLinks = [
+  { icon: Facebook, href: '#' },
+  { icon: Instagram, href: 'https://www.instagram.com/elevaterootz/' },
+  { icon: Twitter, href: '#' },
+  { icon: Youtube, href: '#' },
+];
+
 const quickLinks = [
   { href: '/services', label: 'Our Services' },
   { href: '/about', label: 'About Us' },
@@ -24,16 +31,18 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <img src={logo} alt="Elevate Rootz" className="h-16 w-auto brightness-0 invert" />
+            <img src={logo} alt="Elevate Rootz" className="h-16 w-auto brightness-0 invert hover:scale-105 transition-transform duration-300 cursor-pointer" />
             <p className="text-primary-foreground/70 leading-relaxed">
-              Premium hair transplant and skin care solutions with locations in India and Dubai. 
-              Science-based treatments tailored to your unique needs.
+              Premium hair transplant and skin care solutions with 4 clinics across India and Dubai.
+              25 Years warranty | 6000+ Patients | Science-based treatments tailored to your unique needs.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Twitter, Youtube].map((Icon, index) => (
+              {socialLinks.map(({ icon: Icon, href }, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={href}
+                  target={href !== '#' ? '_blank' : undefined}
+                  rel={href !== '#' ? 'noopener noreferrer' : undefined}
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors duration-300"
                 >
                   <Icon className="w-5 h-5" />
@@ -83,8 +92,8 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-1" />
                 <span className="text-primary-foreground/70">
-                  123 Medical Plaza, Sector 15<br />
-                  Delhi, India
+                  Hyderabad, Telangana<br />
+                  India
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -108,13 +117,12 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/60 text-sm">
+        <div className="container py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/60 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} Elevate Rootz. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex flex-wrap justify-center sm:justify-end gap-6 text-sm">
             <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary transition-colors">
               Privacy Policy
             </Link>

@@ -6,7 +6,7 @@ import heroImage from '@/assets/hero-image.jpg';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-hero">
       {/* Background Pattern */}
       <div className="absolute inset-0 leaf-pattern opacity-50" />
       
@@ -22,8 +22,8 @@ export const Hero = () => {
         transition={{ duration: 8, repeat: Infinity }}
       />
 
-      <div className="container relative z-10 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="container relative z-10 py-8 md:py-12 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -136,7 +136,7 @@ export const Hero = () => {
                 <img
                   src={heroImage}
                   alt="Premium Hair Care Treatment"
-                  className="w-full h-[500px] lg:h-[600px] object-cover"
+                  className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 />
                 
                 {/* Overlay Gradient */}
@@ -148,7 +148,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
-                className="absolute -bottom-6 -left-6 glass-card p-6 shadow-glow"
+                className="absolute bottom-6 left-6 md:-bottom-6 md:-left-6 glass-card p-4 md:p-6 shadow-glow max-w-[200px] md:max-w-none"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center">

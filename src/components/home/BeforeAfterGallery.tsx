@@ -137,7 +137,7 @@ export const BeforeAfterGallery = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {transformations.map((item, index) => (
             <motion.div
               key={item.id}

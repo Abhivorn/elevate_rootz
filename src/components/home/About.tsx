@@ -15,7 +15,7 @@ export const About = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -30,7 +30,7 @@ export const About = () => {
                 <img
                   src={aboutImage}
                   alt="About Elevate Rootz"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[400px] md:h-[500px] object-cover"
                 />
               </div>
 
