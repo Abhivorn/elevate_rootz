@@ -14,9 +14,9 @@ const categories = ['All', 'Hair Transplant', 'Skin Care', 'Treatments', 'Clinic
 
 const galleryItems = [
   { image: heroImage, category: 'Clinic', title: 'Our Treatment Room' },
-  { image: service1, category: 'Skin Care', title: 'Pixelite 2.0 Treatment' },
-  { image: service2, category: 'Treatments', title: 'Microneedling Session' },
-  { image: service3, category: 'Skin Care', title: 'Carbon Laser Peel' },
+  { image: service1, category: 'Hair Transplant', title: 'FUE Hair Transplant' },
+  { image: service2, category: 'Hair Transplant', title: 'Hair Restoration' },
+  { image: service3, category: 'Hair Transplant', title: 'Advanced Transplant' },
   { image: service4, category: 'Skin Care', title: 'Glycolic Treatment' },
   { image: service5, category: 'Treatments', title: 'Classic Facial' },
   { image: service6, category: 'Treatments', title: 'Deep Cleansing' },

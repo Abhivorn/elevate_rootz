@@ -122,14 +122,6 @@ export const Footer = () => {
           <p className="text-primary-foreground/60 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} Elevate Rootz. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center sm:justify-end gap-6 text-sm">
-            <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-primary-foreground/60 hover:text-primary transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

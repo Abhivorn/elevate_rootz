@@ -31,6 +31,9 @@ const Index = () => {
       // New user
       localStorage.setItem('hasVisited', 'true');
       localStorage.setItem('visitCount', '1');
+      toast('Welcome to Elevate Rootz!', {
+        description: 'Discover premium hair transplant and dermatology services.',
+      });
     } else {
       // Returning user
       const newCount = visitCount + 1;
