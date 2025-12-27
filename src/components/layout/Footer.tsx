@@ -31,7 +31,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <img src={logo} alt="Elevate Rootz" className="h-16 w-auto brightness-0 invert hover:scale-105 transition-transform duration-300 cursor-pointer" />
+            <img src={logo} alt="Elevate Rootz" className="h-16 w-auto brightness-0 invert hover:brightness-100 hover:invert-0 hover:scale-105 transition-all duration-300 cursor-pointer" />
             <p className="text-primary-foreground/70 leading-relaxed">
               Premium hair transplant and skin care solutions with 4 clinics across India and Dubai.
               25 Years warranty | 6000+ Patients | Science-based treatments tailored to your unique needs.
@@ -110,7 +110,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-primary-foreground/70">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                <span className="text-primary-foreground/70">WED - MON: 10:30 AM - 7 PM</span>
               </li>
             </ul>
           </div>

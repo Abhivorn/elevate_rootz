@@ -141,6 +141,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -148,12 +149,18 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
 @layer components {
+
   /* Glassmorphism Cards */
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
@@ -244,5 +251,22 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Toast mobile styles */
+[data-sonner-toaster] {
+  z-index: 99999 !important;
+}
+
+[data-sonner-toast] {
+  max-width: calc(100vw - 32px) !important;
+}
+
+@media (max-width: 640px) {
+  [data-sonner-toaster] {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 80px !important;
   }
 }

@@ -37,9 +37,9 @@ export const Navbar = () => {
         <div className="container">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 text-xs md:text-sm">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-6">
-              <a href="tel:+911234567890" className="flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity">
+              <a href="tel:+919172923268" className="flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity">
                 <Phone className="w-3 h-3 md:w-4 md:h-4" />
-                <span className="hidden sm:inline">+91 123 456 7890</span>
+                <span className="hidden sm:inline">+91 9172923268</span>
                 <span className="sm:hidden">Call</span>
               </a>
               <span className="flex items-center gap-1 md:gap-2">
@@ -49,7 +49,7 @@ export const Navbar = () => {
               </span>
             </div>
             <div className="flex items-center">
-              <span className="opacity-80 text-center sm:text-right text-xs md:text-sm">Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <span className="opacity-80 text-center sm:text-right text-xs md:text-sm">WED - MON: 10:30 AM - 7 PM</span>
             </div>
           </div>
         </div>
@@ -59,11 +59,10 @@ export const Navbar = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`sticky top-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-background/95 backdrop-blur-xl shadow-soft border-b border-border/50'
-            : 'bg-background/80 backdrop-blur-md'
-        }`}
+        className={`sticky top-0 z-50 transition-all duration-500 ${isScrolled
+          ? 'bg-background/95 backdrop-blur-xl shadow-soft border-b border-border/50'
+          : 'bg-background/80 backdrop-blur-md'
+          }`}
       >
         <nav className="container flex items-center justify-between h-20">
           {/* Logo */}
@@ -83,11 +82,10 @@ export const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`relative font-medium transition-colors duration-300 underline-animation ${
-                  location.pathname === link.href
-                    ? 'text-primary'
-                    : 'text-foreground/80 hover:text-primary'
-                }`}
+                className={`relative font-medium transition-colors duration-300 underline-animation ${location.pathname === link.href
+                  ? 'text-primary'
+                  : 'text-foreground/80 hover:text-primary'
+                  }`}
               >
                 {link.label}
                 {location.pathname === link.href && (
@@ -145,11 +143,10 @@ export const Navbar = () => {
                   >
                     <Link
                       to={link.href}
-                      className={`block py-3 text-lg font-medium transition-colors ${
-                        location.pathname === link.href
-                          ? 'text-primary'
-                          : 'text-foreground/80'
-                      }`}
+                      className={`block py-3 text-lg font-medium transition-colors ${location.pathname === link.href
+                        ? 'text-primary'
+                        : 'text-foreground/80'
+                        }`}
                     >
                       {link.label}
                     </Link>

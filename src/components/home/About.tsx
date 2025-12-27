@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import aboutImage from '@/assets/about-image.jpg';
 
 const highlights = [
-  'Expert dermatologists with 15+ years experience',
+  'Expert dermatologists with 9+ years experience',
   'State-of-the-art facilities in India & Dubai',
   'Personalized treatment plans for every patient',
   '100% organic and clinically tested products',
@@ -45,7 +45,7 @@ export const About = () => {
                 transition={{ delay: 0.5 }}
                 className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-glow"
               >
-                <p className="text-4xl font-bold font-serif">15+</p>
+                <p className="text-4xl font-bold font-serif">9+</p>
                 <p className="text-sm opacity-90">Years of Excellence</p>
               </motion.div>
             </div>
@@ -69,16 +69,15 @@ export const About = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Use this space to highlight the things that set you apart from your competition, 
-              whether it's a special feature, a unique philosophy, or awards and recognition 
-              that you have received. Think of this as your elevator pitch to get the reader's attention.
+            Elevate Rootz, established in 2016, was founded with the vision of delivering excellence in hair restoration and aesthetic care. Since the beginning, the focus has been on innovation, precision, and personalized treatment to achieve natural and lasting results.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              At Elevate Rootz, we combine cutting-edge technology with natural healing 
-              practices to deliver exceptional results. Our team of certified dermatologists 
-              and hair transplant specialists are dedicated to helping you achieve your 
-              aesthetic goals safely and effectively.
+             Our team of certified dermatologists, surgeons, and OT technicians brings years of experience and has successfully performed thousands of procedures. By combining advanced technology with natural healing practices, we ensure safe, effective, and customized solutions for every patient.
+            </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+             At Elevate Rootz, patient care goes beyond the procedure. We maintain clear communication and provide complete medical guidance from consultation to recovery. With state-of-the-art facilities in India and Dubai, we follow international standards to deliver consistent, high-quality outcomes.
             </p>
 
             {/* Highlights */}

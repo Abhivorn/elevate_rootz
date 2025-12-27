@@ -54,11 +54,11 @@ const locations = [
 ];
 
 const contactInfo = [
-  { icon: Phone, label: 'Phone', value: '+91 123 456 7890', href: 'tel:+911234567890' },
-  { icon: Mail, label: 'Email', value: 'hello@elevaterootz.com', href: 'mailto:hello@elevaterootz.com' },
+  { icon: Phone, label: 'Phone', value: '+91 9172923268', href: 'tel:+919172923268' },
+  { icon: Mail, label: 'Email', value: 'info@elevaterootz.com', href: 'mailto:info@elevaterootz.com' },
   { icon: MapPin, label: 'Hyderabad Office', value: 'Hyderabad, Telangana, India', href: 'https://www.google.com/maps?q=17.4829782,78.4134561' },
   { icon: MapPin, label: 'Dubai Office', value: '456 Healthcare Tower, Dubai', href: null },
-  { icon: Clock, label: 'Hours', value: 'Mon - Sat: 9AM - 7PM', href: null },
+  { icon: Clock, label: 'Hours', value: 'WED - MON: 10:30AM - 7PM', href: null },
 ];
 
 const Contact = () => {
@@ -81,14 +81,14 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     console.log('Form submitted:', data);
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     toast({
       title: 'Message Sent!',
       description: 'We\'ll get back to you within 24 hours.',
@@ -314,8 +314,15 @@ const Contact = () => {
               </div>
 
               <div className="space-y-6">
-                {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-start gap-4">
+                {contactInfo.map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    className="flex items-start gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-primary" />
                     </div>
@@ -332,12 +339,18 @@ const Contact = () => {
                         <p className="text-muted-foreground">{item.value}</p>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Embedded Map */}
-              <div className="rounded-2xl overflow-hidden h-64">
+              <motion.div
+                className="rounded-2xl overflow-hidden h-64"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
                 <iframe
                   src="https://maps.google.com/maps?q=17.4829782,78.4134561&z=17&output=embed"
                   width="100%"
@@ -348,7 +361,7 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Location Map"
                 ></iframe>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>

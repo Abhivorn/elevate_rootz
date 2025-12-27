@@ -9,30 +9,37 @@ import service3 from '@/assets/service-3.jpg';
 import service4 from '@/assets/service-4.jpg';
 import service5 from '@/assets/service-5.jpg';
 import service6 from '@/assets/service-6.jpg';
+import hairplantation2 from '@/assets/hairplantation2.jpg';
+import hairplantation3 from '@/assets/hairplantation3.jpg';
+import hairplantation4 from '@/assets/hairplantation4.jpg';
+import hairplantation5 from '@/assets/hairplantation5.jpg';
+
+
 
 const allServices = [
   {
     category: 'Dermatologist Procedures',
     services: [
-      { name: 'Pixelite 2.0', price: '$150/session', image: service1, description: 'Advanced laser skin resurfacing treatment for smoother, younger-looking skin.' },
-      { name: 'Microneedling', price: '$100/session', image: service2, description: 'Stimulate collagen production for improved skin texture and tone.' },
-      { name: 'Carbon Laser Peel', price: '$100/session', image: service3, description: 'Deep cleansing treatment for oily skin and enlarged pores.' },
+      { name: 'Pixelite 2.0', image: service1, description: 'Advanced laser skin resurfacing treatment for smoother, younger-looking skin.' },
+      { name: 'Microneedling', image:service2, description: 'Stimulate collagen production for improved skin texture and tone.' },
+      { name: 'Carbon Laser Peel', image: service3, description: 'Deep cleansing treatment for oily skin and enlarged pores.' },
     ],
   },
   {
     category: 'Cleansing Treatments',
     services: [
-      { name: 'Glycolic Acid Cleaning', price: '$60', image: service4, description: 'Exfoliating treatment that removes dead skin cells for a brighter complexion.' },
-      { name: 'Classic Facial', price: '$70', image: service5, description: 'Traditional facial with cleansing, exfoliation, and hydration.' },
-      { name: 'Deep Cleansing Facial', price: '$90', image: service6, description: 'Intensive treatment for congested and problem skin.' },
+      { name: 'Glycolic Acid Cleaning', image: service4, description: 'Exfoliating treatment that removes dead skin cells for a brighter complexion.' },
+      { name: 'Classic Facial', image: service5, description: 'Traditional facial with cleansing, exfoliation, and hydration.' },
+      { name: 'Deep Cleansing Facial', image: service6, description: 'Intensive treatment for congested and problem skin.' },
     ],
   },
   {
     category: 'Hair Transplant',
     services: [
-      { name: 'FUE Hair Transplant', price: 'Consultation', image: service1, description: 'Follicular Unit Extraction for natural-looking hair restoration.' },
-      { name: 'PRP Therapy', price: '$200/session', image: service2, description: 'Platelet-Rich Plasma therapy to stimulate hair growth.' },
-      { name: 'Scalp Micropigmentation', price: 'Consultation', image: service3, description: 'Non-surgical solution for the appearance of fuller hair.' },
+      { name: 'FUE Hair Transplant', image: hairplantation2, description: 'Follicular Unit Extraction for natural-looking hair restoration.' },
+      { name: 'PRP Therapy', image: hairplantation3, description: 'Platelet-Rich Plasma therapy to stimulate hair growth.' },
+      { name: 'Scalp Micropigmentation', image: hairplantation4, description: 'Non-surgical solution for the appearance of fuller hair.' },
+
     ],
   },
 ];
@@ -56,7 +63,7 @@ const Services = () => {
               Premium <span className="text-primary">Treatments</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Discover our comprehensive range of dermatology and hair transplant services, 
+              Discover our comprehensive range of dermatology and hair transplant services,
               all delivered by certified experts using the latest technology.
             </p>
           </motion.div>
@@ -90,19 +97,13 @@ const Services = () => {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="glass-card overflow-hidden hover:shadow-glow transition-all duration-500">
+                  <div className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500">
                     <div className="relative h-64 overflow-hidden">
                       <img
                         src={service.image}
                         alt={service.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block px-3 py-1 rounded-full bg-primary text-primary-foreground text-sm font-medium">
-                          {service.price}
-                        </span>
-                      </div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-serif font-semibold text-foreground mb-2">

@@ -86,7 +86,7 @@ export const Hero = () => {
                   <Award className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-foreground">15+</p>
+                  <p className="text-2xl font-bold text-foreground">9+</p>
                   <p className="text-sm text-muted-foreground">Years Experience</p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export const Hero = () => {
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-foreground">10K+</p>
+                  <p className="text-2xl font-bold text-foreground">6K+</p>
                   <p className="text-sm text-muted-foreground">Happy Clients</p>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export const Hero = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Our Story Began in</p>
-                    <p className="text-2xl font-bold text-primary font-serif">1975</p>
+                    <p className="text-2xl font-bold text-primary font-serif">2016</p>
                   </div>
                 </div>
               </motion.div>

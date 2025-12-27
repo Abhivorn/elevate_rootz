@@ -10,15 +10,15 @@ import service5 from '@/assets/service-5.jpg';
 import service6 from '@/assets/service-6.jpg';
 
 const dermatologistProcedures = [
-  { name: 'Pixelite 2.0', price: '$150/session', image: service1 },
-  { name: 'Microneedling', price: '$100/session', image: service2 },
-  { name: 'Carbon Laser Peel', price: '$100/session', image: service3 },
+  { name: 'Pixelite 2.0', image: service1 },
+  { name: 'Microneedling', image: service2 },
+  { name: 'Carbon Laser Peel', image: service3 },
 ];
 
 const cleansingServices = [
-  { name: 'Glycolic Acid Cleaning', price: '$60', image: service4 },
-  { name: 'Classic Facial', price: '$70', image: service5 },
-  { name: 'Deep Cleansing Facial', price: '$90', image: service6 },
+  { name: 'Glycolic Acid Cleaning', image: service4 },
+  { name: 'Classic Facial', image: service5 },
+  { name: 'Deep Cleansing Facial', image: service6 },
 ];
 
 const containerVariants = {

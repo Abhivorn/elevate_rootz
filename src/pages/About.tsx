@@ -25,11 +25,11 @@ const values = [
 ];
 
 const milestones = [
-  { year: '1975', event: 'Our story began with a vision for better skincare' },
-  { year: '1990', event: 'Expanded to include hair restoration services' },
-  { year: '2005', event: 'Opened our first international clinic in Dubai' },
-  { year: '2020', event: 'Celebrated 10,000+ successful treatments' },
-  { year: '2024', event: 'Launched advanced AI-assisted diagnostics' },
+  { year: '2016', event: 'Our story began with a vision for better skincare' },
+  { year: '2018', event: 'Expanded to include hair restoration services' },
+  { year: '2020', event: 'Opened our first international clinic in Dubai' },
+  { year: '2022', event: 'Celebrated 6,000+ successful treatments' },
+  { year: '2025', event: 'Launched advanced AI-assisted diagnostics' },
 ];
 
 const About = () => {
@@ -51,7 +51,7 @@ const About = () => {
               Our <span className="text-primary">Story</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Since 1975, we've been dedicated to helping people look and feel their best 
+              Since 2016, we've been dedicated to helping people look and feel their best
               through science-backed treatments and personalized care.
             </p>
           </motion.div>
@@ -88,25 +88,24 @@ const About = () => {
                 What's special about <span className="text-primary">Elevate Rootz</span>?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Use this space to highlight the things that set you apart from your competition, 
-                whether it's a special feature, a unique philosophy, or awards and recognition 
-                that you have received.
+                Elevate Rootz, established in 2016, was founded with the vision of delivering excellence in hair restoration and aesthetic care. Since the beginning, the focus has been on innovation, precision, and personalized treatment to achieve natural and lasting results.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                At Elevate Rootz, we combine cutting-edge technology with natural healing 
-                practices to deliver exceptional results. Our team of certified dermatologists 
-                and hair transplant specialists are dedicated to helping you achieve your 
-                aesthetic goals safely and effectively.
+                Our team of certified dermatologists, surgeons, and OT technicians brings years of experience and has successfully performed thousands of procedures. By combining advanced technology with natural healing practices, we ensure safe, effective, and customized solutions for every patient.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                At Elevate Rootz, patient care goes beyond the procedure. We maintain clear communication and provide complete medical guidance from consultation to recovery. With state-of-the-art facilities in India and Dubai, we follow international standards to deliver consistent, high-quality outcomes.
               </p>
               <ul className="space-y-3">
-                {['Expert dermatologists with 15+ years experience', 
-                  'State-of-the-art facilities in India & Dubai', 
+                {['Expert dermatologists with 9+ years experience',
+                  'State-of-the-art facilities in India & Dubai',
                   'Personalized treatment plans for every patient'].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
+                    <li key={item} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
               </ul>
             </motion.div>
           </div>
@@ -128,13 +127,9 @@ const About = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <motion.div
+            {values.map((value) => (
+              <div
                 key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="glass-card p-8 text-center hover:shadow-glow transition-all duration-500"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -144,7 +139,7 @@ const About = () => {
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground">{value.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -171,7 +166,7 @@ const About = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ duration: 0.3 }}
                 className="flex gap-6 mb-8 last:mb-0"
               >
                 <div className="w-20 shrink-0 text-right">
@@ -203,7 +198,7 @@ const About = () => {
               Visit Us in India & Dubai
             </h2>
             <p className="text-primary-foreground/80 mb-8">
-              With locations in two of the world's most dynamic cities, 
+              With locations in two of the world's most dynamic cities,
               world-class care is never far away.
             </p>
             <Button variant="hero" size="lg" asChild>

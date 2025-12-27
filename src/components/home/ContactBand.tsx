@@ -5,14 +5,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '(123) 456-7890',
-    href: 'tel:+1234567890',
+    value: '+91 9172923268',
+    href: 'tel:+91 9172923268',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@reallygreatsite.com',
-    href: 'mailto:hello@reallygreatsite.com',
+    value: 'info@eleventroots.com',
+    href: 'mailto:info@eleventroots.com',
   },
   {
     icon: MapPin,
@@ -23,7 +23,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: 'Hours',
-    value: 'Mon - Sat: 9AM - 7PM',
+    value: 'WED - MON: 10:30 AM - 7 PM',
     href: null,
   },
 ];

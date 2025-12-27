@@ -1,26 +1,34 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MotionPage } from '@/components/MotionPage';
-import service1 from '@/assets/service-1.jpg';
-import service2 from '@/assets/service-2.jpg';
-import service3 from '@/assets/service-3.jpg';
 import service4 from '@/assets/service-4.jpg';
 import service5 from '@/assets/service-5.jpg';
 import service6 from '@/assets/service-6.jpg';
 import heroImage from '@/assets/hero-image.jpg';
 import aboutImage from '@/assets/about-image.jpg';
+import hairplantation2 from '@/assets/hairplantation2.jpg';
+import hairplantation3 from '@/assets/hairplantation3.jpg';
+import hairplantation4 from '@/assets/hairplantation4.jpg';
+import treatment1 from '@/assets/treatment1.jpg';
+import skincare1 from '@/assets/skincare1.webp';
+import skincare2 from '@/assets/skincare2.jpg';
+import clinic1 from '@/assets/clinic1.webp';
 
 const categories = ['All', 'Hair Transplant', 'Skin Care', 'Treatments', 'Clinic'];
 
 const galleryItems = [
   { image: heroImage, category: 'Clinic', title: 'Our Treatment Room' },
-  { image: service1, category: 'Hair Transplant', title: 'FUE Hair Transplant' },
-  { image: service2, category: 'Hair Transplant', title: 'Hair Restoration' },
-  { image: service3, category: 'Hair Transplant', title: 'Advanced Transplant' },
-  { image: service4, category: 'Skin Care', title: 'Glycolic Treatment' },
+  { image: aboutImage, category: 'Clinic', title: 'Our Expert Team' },
+  { image: clinic1, category: 'Clinic', title: 'Clinic Interior' },
+  { image: hairplantation2, category: 'Hair Transplant', title: 'FUE Hair Transplant' },
+  { image: hairplantation3, category: 'Hair Transplant', title: 'Hair Restoration' },
+  { image: hairplantation4, category: 'Hair Transplant', title: 'Advanced Transplant' },
+  { image: service4, category: 'Skin Care', title: 'Glycolic Skin Renewal Treatment' },
+  { image: skincare1, category: 'Skin Care', title: 'Glycolic Brightening Treatment' },
+  { image: skincare2, category: 'Skin Care', title: 'Glycolic Acne & Texture Treatment' },
   { image: service5, category: 'Treatments', title: 'Classic Facial' },
   { image: service6, category: 'Treatments', title: 'Deep Cleansing' },
-  { image: aboutImage, category: 'Clinic', title: 'Our Expert Team' },
+  { image: treatment1, category: 'Treatments', title: 'Hair Treatment' },
 ];
 
 const Gallery = () => {
@@ -68,11 +76,10 @@ const Gallery = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-primary text-primary-foreground shadow-soft'
-                    : 'bg-secondary text-secondary-foreground hover:bg-primary/10'
-                }`}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category
+                  ? 'bg-primary text-primary-foreground shadow-soft'
+                  : 'bg-secondary text-secondary-foreground hover:bg-primary/10'
+                  }`}
               >
                 {category}
               </button>
@@ -82,17 +89,15 @@ const Gallery = () => {
           {/* Gallery Grid */}
           <motion.div
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="flex flex-wrap justify-center gap-6"
           >
             {filteredItems.map((item, index) => (
               <motion.div
-                key={item.title}
-                layout
+                key={`${index}-${item.title}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ delay: index * 0.05 }}
-                className="group relative overflow-hidden rounded-2xl aspect-square"
+                transition={{ duration: 0.3 }}
+                className="group relative overflow-hidden rounded-2xl aspect-square w-full sm:w-[280px] md:w-[300px]"
               >
                 <img
                   src={item.image}

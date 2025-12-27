@@ -17,9 +17,9 @@ export const WhatsAppButton = () => {
       {/* Tooltip Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8, y: 10 }}
-        animate={{ 
-          opacity: isOpen ? 1 : 0, 
-          scale: isOpen ? 1 : 0.8, 
+        animate={{
+          opacity: isOpen ? 1 : 0,
+          scale: isOpen ? 1 : 0.8,
           y: isOpen ? 0 : 10,
           pointerEvents: isOpen ? 'auto' : 'none'
         }}
@@ -27,7 +27,7 @@ export const WhatsAppButton = () => {
         className="absolute bottom-20 right-0 w-72 max-w-[calc(100vw-2rem)] bg-card rounded-2xl shadow-card border border-border overflow-hidden mb-2"
       >
         {/* Header */}
-        <div className="bg-[#25D366] px-4 py-3 flex items-center justify-between">
+        <div className="bg-primary px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-white" />
@@ -37,14 +37,14 @@ export const WhatsAppButton = () => {
               <p className="text-white/80 text-xs">Typically replies instantly</p>
             </div>
           </div>
-          <button 
+          <button
             onClick={() => setIsOpen(false)}
             className="text-white/80 hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
-        
+
         {/* Body */}
         <div className="p-4 bg-[#ECE5DD]">
           <div className="bg-white rounded-lg p-3 shadow-sm">
@@ -56,12 +56,12 @@ export const WhatsAppButton = () => {
             </p>
           </div>
         </div>
-        
+
         {/* CTA */}
         <div className="p-4 bg-card">
           <button
             onClick={handleWhatsAppClick}
-            className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-medium py-3 px-4 rounded-full transition-colors flex items-center justify-center gap-2"
+            className="w-full bg-primary hover:bg-[#7A8935] text-white font-medium py-3 px-4 rounded-full transition-colors flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-5 h-5" />
             Start Chat
@@ -74,7 +74,7 @@ export const WhatsAppButton = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
+        className="w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
         aria-label="Chat on WhatsApp"
       >
         <motion.div
@@ -87,7 +87,7 @@ export const WhatsAppButton = () => {
 
       {/* Pulse animation */}
       {!isOpen && (
-        <span className="absolute -inset-1 rounded-full bg-[#25D366]/30 animate-ping pointer-events-none" />
+        <span className="absolute -inset-1 rounded-full bg-primary/30 animate-ping pointer-events-none" />
       )}
     </div>
   );
