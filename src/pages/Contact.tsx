@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -49,8 +50,11 @@ const services = [
 ];
 
 const locations = [
-  'India - Hyderabad',
-  'Dubai',
+  'pune',
+    'Ahmedabad',
+    'Bangalore',
+    'Hyderabad',
+    'Dubai',
 ];
 
 const contactInfo = [
@@ -82,20 +86,38 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          phone: data.phone,
+          service: data.service,
+          location: data.location,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    console.log('Form submitted:', data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    toast({
-      title: 'Message Sent!',
-      description: 'We\'ll get back to you within 24 hours.',
-    });
-
-    form.reset();
-    setTimeout(() => setIsSubmitted(false), 3000);
+      setIsSubmitted(true);
+      toast({
+        title: 'Message Sent!',
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setIsSubmitted(false), 3000);
+    }
   };
 
   return (

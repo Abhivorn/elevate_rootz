@@ -20,7 +20,7 @@ const services = [
   { href: '/services#hair-transplant', label: 'Hair Transplant' },
   { href: '/services#prp-therapy', label: 'PRP Therapy' },
   { href: '/services#skin-treatments', label: 'Skin Treatments' },
-  { href: '/services#dermatology', label: 'Dermatology' },
+  { href: '/services#dermatology', label: 'GFP' },
 ];
 
 export const Footer = () => {
@@ -98,8 +98,8 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+911234567890" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  +91 123 456 7890
+                <a href="tel:+91 9172923268" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  +91 9172923268
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -120,7 +120,15 @@ export const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} Elevate Rootz. All rights reserved.
+            © {new Date().getFullYear()} Elevate Rootz. All rights reserved. | Developed by{' '}
+            <a
+              href="https://www.abhivorn.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Abhivorn Technologies.pvt Ltd
+            </a>
           </p>
         </div>
       </div>

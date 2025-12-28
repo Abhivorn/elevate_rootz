@@ -1,23 +1,32 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeftRight } from 'lucide-react';
-import heroImage from '@/assets/hero-image.jpg';
-import aboutImage from '@/assets/about-image.jpg';
 import service1 from '@/assets/service-1.jpg';
 import service2 from '@/assets/service-2.jpg';
+import hairplantation2 from '@/assets/hairplantation2.jpg';
+import hairplantation3 from '@/assets/hairplantation3.jpg';
+import hairplantation4 from '@/assets/hairplantation4.jpg';
+import hairplantation5 from '@/assets/hairplantation5.jpg';
+import hairplantation6 from '@/assets/hairplantation6.jpg';
+import hairplantation7 from '@/assets/hairplantation7.jpg';
+import treatment1 from '@/assets/treatment1.jpg';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
   afterImage: string;
   beforeLabel?: string;
   afterLabel?: string;
+  beforePosition?: string;
+  afterPosition?: string;
 }
 
-const BeforeAfterSlider = ({ 
-  beforeImage, 
-  afterImage, 
-  beforeLabel = 'Before', 
-  afterLabel = 'After' 
+const BeforeAfterSlider = ({
+  beforeImage,
+  afterImage,
+  beforeLabel = 'Before',
+  afterLabel = 'After',
+  beforePosition,
+  afterPosition,
 }: BeforeAfterSliderProps) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -39,6 +48,8 @@ const BeforeAfterSlider = ({
     handleMove(e.touches[0].clientX, rect);
   };
 
+  const isComposite = beforeImage === afterImage;
+
   return (
     <div
       className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-ew-resize select-none group"
@@ -53,6 +64,7 @@ const BeforeAfterSlider = ({
         src={afterImage}
         alt={afterLabel}
         className="absolute inset-0 w-full h-full object-cover"
+        style={afterPosition ? { objectPosition: afterPosition } : (beforeImage === afterImage ? { objectPosition: 'bottom' } : undefined)}
         draggable={false}
       />
 
@@ -65,6 +77,7 @@ const BeforeAfterSlider = ({
           src={beforeImage}
           alt={beforeLabel}
           className="absolute inset-0 w-full h-full object-cover"
+          style={beforePosition ? { objectPosition: beforePosition } : (beforeImage === afterImage ? { objectPosition: 'top' } : undefined)}
           draggable={false}
         />
       </div>
@@ -99,17 +112,17 @@ const BeforeAfterSlider = ({
 const transformations = [
   {
     id: 1,
-    beforeImage: heroImage,
-    afterImage: aboutImage,
-    title: 'Hair Transplant Result',
-    description: 'FUE procedure - 3000 grafts',
-  },
-  {
-    id: 2,
     beforeImage: service1,
     afterImage: service2,
     title: 'Skin Rejuvenation',
-    description: 'Pixelite 2.0 treatment - 6 sessions',
+    description: 'Advanced glow treatment - 6 sessions',
+  },
+  {
+    id: 2,
+    beforeImage: hairplantation6,
+    afterImage: hairplantation7,
+    title: 'Hair Transplant Result',
+    description: 'FUE procedure - 3000 grafts',
   },
 ];
 
@@ -150,6 +163,8 @@ export const BeforeAfterGallery = () => {
               <BeforeAfterSlider
                 beforeImage={item.beforeImage}
                 afterImage={item.afterImage}
+                beforePosition={(item as any).beforePosition}
+                afterPosition={(item as any).afterPosition}
               />
               <div className="text-center">
                 <h3 className="text-xl font-serif font-semibold text-foreground">

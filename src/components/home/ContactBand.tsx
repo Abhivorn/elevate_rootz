@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'info@eleventroots.com',
-    href: 'mailto:info@eleventroots.com',
+    value: 'info@elevaterootz.com',
+    href: 'mailto:info@elevaterootz.com',
   },
   {
     icon: MapPin,

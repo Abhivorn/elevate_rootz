@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/hero-image.jpg';
+import heroImage from '@/assets/hairplantation3.jpg';
 
 export const Hero = () => {
   return (
     <section className="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden bg-gradient-hero">
       {/* Background Pattern */}
       <div className="absolute inset-0 leaf-pattern opacity-50" />
-      
+
       {/* Decorative Circles */}
       <motion.div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
@@ -50,7 +50,7 @@ export const Hero = () => {
                 transition={{ delay: 0.3 }}
                 className="text-primary font-medium text-lg"
               >
-                A Unique Approach to Skin & Hair Care
+                Advanced Hair Restoration Solutions
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -58,8 +58,8 @@ export const Hero = () => {
                 transition={{ delay: 0.4 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight"
               >
-                Science-based <span className="text-gradient">skin care</span> that's tailored to{' '}
-                <span className="text-primary">you</span>
+                World-class <span className="text-gradient">hair transplant</span> treatments for{' '}
+                <span className="text-primary">natural results</span>
               </motion.h1>
             </div>
 
@@ -70,8 +70,8 @@ export const Hero = () => {
               transition={{ delay: 0.5 }}
               className="text-lg text-muted-foreground max-w-xl leading-relaxed"
             >
-              Experience premium hair transplant and dermatology services with our team of experts. 
-              Using advanced techniques and organic products, we deliver natural-looking results that boost your confidence.
+              Restore your confidence with our advanced FUE and DHI hair transplant techniques.
+              Our expert surgeons deliver natural-looking, permanent results using state-of-the-art technology and proven methods.
             </motion.p>
 
             {/* Stats */}
@@ -130,15 +130,15 @@ export const Hero = () => {
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-glow opacity-50 blur-2xl" />
-              
+
               {/* Main Image */}
               <div className="relative rounded-3xl overflow-hidden shadow-card">
                 <img
                   src={heroImage}
-                  alt="Premium Hair Care Treatment"
+                  alt="Advanced Hair Transplant Results"
                   className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 />
-                
+
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>

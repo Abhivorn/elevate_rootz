@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -150,14 +151,14 @@ export const BookingModal = () => {
         // Show modal every 20 seconds
         const interval = setInterval(() => {
             setShowBookingModal(true);
-        }, 20000);
+        }, 40000);
 
         // Show initial modal after 3 seconds for returning visitors
         const initialTimeout = setTimeout(() => {
             if (hasVisited) {
                 setShowBookingModal(true);
             }
-        }, 3000);
+        }, 40000);
 
         return () => {
             clearInterval(interval);
@@ -165,24 +166,47 @@ export const BookingModal = () => {
         };
     }, []);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!formData.name || !formData.phone || !formData.email) {
             toast.error('Please fill in all required fields');
             return;
         }
-        toast.success('Appointment request submitted!', {
-            description: 'We will contact you shortly.',
-        });
-        setShowBookingModal(false);
-        setFormData({
-            name: '',
-            phone: '',
-            email: '',
-            age: '',
-            service: '',
-            center: '',
-            baldnessGrade: 0,
-        });
+
+        // Check if environment variables are loaded (debug)
+        if (!import.meta.env.VITE_EMAILJS_SERVICE_ID) {
+            console.error('EmailJS Error: Environment variables not loaded. Did you restart the server?');
+            toast.error('Configuration error. Please try again later.');
+            return;
+        }
+
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_BOOKING_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    age: formData.age,
+                    service: formData.service,
+                    center: formData.center,
+                    baldness_grade: formData.baldnessGrade,
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
+
+            toast.success('Appointment request submitted!', {
+                description: 'We will contact you shortly.',
+            });
+            setShowBookingModal(false);
+            resetForm();
+        } catch (error: any) {
+            console.error('EmailJS Error:', error);
+            if (error.text) {
+                console.error('EmailJS Error Text:', error.text);
+            }
+            toast.error('Failed to submit request. Please try again.');
+        }
     };
 
     const resetForm = () => {
