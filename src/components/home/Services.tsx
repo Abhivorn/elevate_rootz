@@ -8,11 +8,14 @@ import service3 from '@/assets/service-3.jpg';
 import service4 from '@/assets/service-4.jpg';
 import service5 from '@/assets/service-5.jpg';
 import service6 from '@/assets/service-6.jpg';
+import hairplantation2 from '@/assets/hairplantation2.jpg';
+import hairplantation4 from '@/assets/hairplantation4.jpg';
+import hairplantation5 from '@/assets/hairplantation5.jpg';
 
-const dermatologistProcedures = [
-  { name: 'Pixelite 2.0', image: service1 },
-  { name: 'Microneedling', image: service2 },
-  { name: 'Carbon Laser Peel', image: service3 },
+const HairProcedures = [
+  { name: 'Fue Hair Transplantation', image: hairplantation2 },
+  { name: 'Scalp Micropigmentation', image: hairplantation4 },
+  { name: 'Advanced Transplantation', image: hairplantation5 },
 ];
 
 const cleansingServices = [
@@ -51,7 +54,7 @@ export const Services = () => {
             Our Services
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
-            Premium Treatments for <span className="text-primary">Your Skin</span>
+            Premium Treatments for <span className="text-primary">Your Hair</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Discover our range of science-backed treatments designed to rejuvenate and restore your natural beauty.
@@ -67,7 +70,7 @@ export const Services = () => {
             className="text-2xl font-serif font-semibold text-foreground mb-8 flex items-center gap-3"
           >
             <span className="w-12 h-0.5 bg-primary" />
-            Dermatologist Procedures
+            Hair Procedures
           </motion.h3>
           
           <motion.div
@@ -77,7 +80,7 @@ export const Services = () => {
             viewport={{ once: true }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
-            {dermatologistProcedures.map((service, index) => (
+            {HairProcedures.map((service, index) => (
               <motion.div
                 key={service.name}
                 variants={itemVariants}

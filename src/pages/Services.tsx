@@ -12,17 +12,19 @@ import service6 from '@/assets/service-6.jpg';
 import hairplantation2 from '@/assets/hairplantation2.jpg';
 import hairplantation3 from '@/assets/hairplantation3.jpg';
 import hairplantation4 from '@/assets/hairplantation4.jpg';
-import hairplantation5 from '@/assets/hairplantation5.jpg';
+import microneedling from '@/assets/microneedling.jpg';
+import skincare2 from '@/assets/skincare2.jpg';
+import skincare1 from '@/assets/skincare1.webp'; 
 
 
 
 const allServices = [
   {
-    category: 'Dermatologist Procedures',
+    category: 'Skin Procedures',
     services: [
-      { name: 'Pixelite 2.0', image: service1, description: 'Advanced laser skin resurfacing treatment for smoother, younger-looking skin.' },
-      { name: 'Microneedling', image:service2, description: 'Stimulate collagen production for improved skin texture and tone.' },
-      { name: 'Carbon Laser Peel', image: service3, description: 'Deep cleansing treatment for oily skin and enlarged pores.' },
+      { name: 'Pixelite 2.0', image: skincare2, description: 'Advanced laser skin resurfacing treatment for smoother, younger-looking skin.' },
+      { name: 'Microneedling', image:microneedling, description: 'Stimulate collagen production for improved skin texture and tone.' },
+      { name: 'Carbon Laser Peel', image: skincare1, description: 'Deep cleansing treatment for oily skin and enlarged pores.' },
     ],
   },
   {

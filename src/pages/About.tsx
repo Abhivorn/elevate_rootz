@@ -25,7 +25,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2016', event: 'Our story began with a vision for better skincare' },
+  { year: '2016', event: 'Our story began with a vision for better Haircare, built to last and supported by a 25-year warranty.' },
   { year: '2018', event: 'Expanded to include hair restoration services' },
   { year: '2020', event: 'Opened our first international clinic in Dubai' },
   { year: '2022', event: 'Celebrated 6,000+ successful treatments' },
